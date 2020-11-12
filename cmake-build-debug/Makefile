@@ -143,6 +143,33 @@ Matrix_Multiplication/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/build
 .PHONY : Matrix_Multiplication/fast
 
+OpenMXM.o: OpenMXM.cpp.o
+
+.PHONY : OpenMXM.o
+
+# target to build an object file
+OpenMXM.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.o
+.PHONY : OpenMXM.cpp.o
+
+OpenMXM.i: OpenMXM.cpp.i
+
+.PHONY : OpenMXM.i
+
+# target to preprocess a source file
+OpenMXM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.i
+.PHONY : OpenMXM.cpp.i
+
+OpenMXM.s: OpenMXM.cpp.s
+
+.PHONY : OpenMXM.s
+
+# target to generate assembly for a file
+OpenMXM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.s
+.PHONY : OpenMXM.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Matrix_Multiplication"
+	@echo "... OpenMXM.o"
+	@echo "... OpenMXM.i"
+	@echo "... OpenMXM.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

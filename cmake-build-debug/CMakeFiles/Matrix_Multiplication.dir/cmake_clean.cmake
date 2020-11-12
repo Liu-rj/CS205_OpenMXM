@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.o"
   "CMakeFiles/Matrix_Multiplication.dir/main.cpp.o"
   "Matrix_Multiplication.exe"
   "Matrix_Multiplication.pdb"

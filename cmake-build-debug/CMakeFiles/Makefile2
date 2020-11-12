@@ -94,12 +94,12 @@ clean: CMakeFiles/Matrix_Multiplication.dir/clean
 CMakeFiles/Matrix_Multiplication.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Matrix_Multiplication.dir/build.make CMakeFiles/Matrix_Multiplication.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Matrix_Multiplication"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Matrix_Multiplication"
 .PHONY : CMakeFiles/Matrix_Multiplication.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Matrix_Multiplication.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Matrix_Multiplication.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Matrix_Multiplication.dir/rule

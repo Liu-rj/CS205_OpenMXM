@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/OpenMXM.cpp">
+			<Option target="Matrix_Multiplication"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/OpenMXM.h">
+			<Option target="Matrix_Multiplication"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/main.cpp">
 			<Option target="Matrix_Multiplication"/>
 		</Unit>

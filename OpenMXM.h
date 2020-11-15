@@ -10,19 +10,26 @@
 struct matrix {
     int row;
     int column;
-    float *elements;
+    float **elements;
 
     matrix(int a, int b) {
         row = a;
         column = b;
-        elements = new float[a * b]{};
+        elements = new float*[row];
+        for (int i = 0; i < row; ++i) {
+            elements[i] = new float[column]{};
+        }
     }
 };
 
-void m_product_column(float *c, const float *a, const float *b,int row1, int column1, int row2, int column2);
+void mxm_column(float **c, float **a, float **b,int row1, int column1, int row2, int column2);
 
-void m_product_row(float *c, const float *a, const float *b,int row1, int column1, int row2, int column2);
+void mxm_row(float **c, float **a, float **b,int row1, int column1, int row2, int column2);
 
-void m_product_block(float *c, const float *a, const float *b,int row1, int column1, int row2, int column2);
+void mxm_block(float **c, float **a, float **b,int row1, int column1, int row2, int column2);
+
+void mxm_sse(float **c, float **a, float **b,int row1, int column1, int row2, int column2);
+
+void product1(float **c, float **a, float **b, int row1, int column1, int row2, int column2);
 
 #endif //MATRIX_MULTIPLICATION_OPENMXM_H

@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/main.cpp
+/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/OpenMXM.cpp
+OpenMXM.h
+/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/OpenMXM.h
+xmmintrin.h
+-
+immintrin.h
+-
+omp.h
+-
+
+/cygdrive/d/SUSTech_cpp/assignments/Matrix_Multiplication/OpenMXM.h
 iostream
 -
 

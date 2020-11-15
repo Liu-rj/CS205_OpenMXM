@@ -4,5 +4,6 @@
 CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.o: ../OpenMXM.cpp
 CMakeFiles/Matrix_Multiplication.dir/OpenMXM.cpp.o: ../OpenMXM.h
 
+CMakeFiles/Matrix_Multiplication.dir/main.cpp.o: ../OpenMXM.h
 CMakeFiles/Matrix_Multiplication.dir/main.cpp.o: ../main.cpp
 

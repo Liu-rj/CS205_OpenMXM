@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <chrono>
 #include "OpenMXM.h"
 
@@ -77,6 +77,8 @@ int main() {
             }
         }
 
+        matrix c(row1, column2);
+
         // do the matrix calculation
         // begin time
         auto start1 = std::chrono::steady_clock::now();
@@ -86,14 +88,12 @@ int main() {
         // end time
         auto end1 = std::chrono::steady_clock::now();
 
-        cout << c.elements[0][0] << ' ' << c.elements[0][1] << endl;
-
-//        for (int i = 0; i < row1 * column2; ++i) {
-//            cout << c.elements[i] << ' ';
-//            if ((i + 1) % column2 == 0) {
-//                cout << endl;
-//            }
-//        }
+        for (int i = 0; i < row1 * column2; ++i) {
+            cout << c.elements[i] << ' ';
+            if ((i + 1) % column2 == 0) {
+                cout << endl;
+            }
+        }
 
         printf("%s%ld%s", "calculation takes ",
                std::chrono::duration_cast<std::chrono::milliseconds>(end1 - start1).count(), " ms\n");

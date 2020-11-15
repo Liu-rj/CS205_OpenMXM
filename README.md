@@ -219,7 +219,7 @@ Surprisingly we save on about 1/4 of the prevoius one and 1/3 from version2.0.
 
 After see the huge progress from 1x4 blocking, we here see that the outer loop i haven't been optimized. Therefore, we can use opemmp to let it loop and do calculation in parallel. Idealy we can see huge progress from prevoius version again.
 
-### TIme Cost
+### Time Cost
 
 ![openmp](./pics/openmp.png)
 
@@ -233,5 +233,30 @@ we can see from the above pic that openblas take about 30 s to do matrix multipl
 
 The reuslt of openblas and our version5.0 is the same, which means that our idea and implement is correct.
 
-Analyzing the time, we can see that in 200M scale, openblas takes 1/4 of our algorithm. But in 1M scale, version5.0's time cost can catch up with openblas which is 33 and 22 ms seperately.
+Analyzing the time, we can see that in 200M scale, openblas takes 1/4 of our algorithm. But in 1M scale, version5.0's time cost can catch up with openblas which is 22 and 33 ms seperately.
 
+## Summary
+
+In this assignment we are working on how to optimizing matrix multiplication and how different ideas works and why. Up to now, we have worked out 5 versions and multiple ways to do the matrix multiplication, from brutal force to OpenBLAS. And each of them differs in efficiency, let's summarize from the data below.
+
+200M:
+
+|  method   | result  | time cost |
+|  :----:  | :----:  | :----: |
+| brutal_force  | 6 9 | ~ |
+| row_prior  | 6 9 | 260564 ms |
+| simple_blocking  | 6 9 | 257978 ms |
+| 1x4_blocking  | 6 9 | 186714 ms |
+| 1x4_openmp  | 6 9 | 146671 ms |
+| OpenBLAS  | 6 9 | 27387 ms |
+
+1M:
+
+|  method   | result  | time cost |
+|  :----:  | :----:  | :----: |
+| brutal_force  | 6 9 | 1051 ms |
+| row_prior  | 6 9 | 207 ms |
+| simple_blocking  | 6 9 | 217 ms |
+| 1x4_blocking  | 6 9 | 104 ms |
+| 1x4_openmp  | 6 9 | 22 ms |
+| OpenBLAS  | 6 9 | 33 ms |

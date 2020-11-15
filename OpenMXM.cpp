@@ -58,31 +58,6 @@ void mxm_sse(float **c, float **a, float **b, int row1, int column1, int row2, i
     }
 }
 
-//void product1(float **c, float **a, float **b, int row1, int column1, int row2, int column2) {
-//    register float creg1, creg2, creg3, creg4, areg;
-//    for (int j = 0; j < column2; j += 4) {
-//        for (int i = 0; i < row1; ++i) {
-//            creg1 = 0;
-//            creg2 = 0;
-//            creg3 = 0;
-//            creg4 = 0;
-//
-//            for (int k = 0; k < column1; ++k) {
-//                areg = a[i][k];
-//                creg1 += areg * b[k][j];
-//                creg2 += areg * b[k][j + 1];
-//                creg3 += areg * b[k][j + 2];
-//                creg4 += areg * b[k][j + 3];
-//            }
-//
-//            c[i][j] = creg1;
-//            c[i][j + 1] = creg2;
-//            c[i][j + 2] = creg3;
-//            c[i][j + 3] = creg4;
-//        }
-//    }
-//} // 900ms 486ms
-
 void addDot(float **c, float **a, float **b, int column1, int i, int j) {
     register float creg1, creg2, creg3, creg4, creg5, creg6, creg7, creg8, creg9, creg10, creg11, creg12, creg13, creg14, creg15, creg16;
     register float areg1, areg2, areg3, areg4;
@@ -142,32 +117,10 @@ void addDot(float **c, float **a, float **b, int column1, int i, int j) {
 }
 
 void product1(float **c, float **a, float **b, int row1, int column1, int row2, int column2) {
-//#pragma omp parallel for
+#pragma omp parallel for
     for (int j = 0; j < column2; j += 4) {
         for (int i = 0; i < row1; i += 4) {
-
             addDot(c, a, b, column1, i, j);
         }
-    }
-} // 900ms 486ms 460ms 125ms
-
-void mxm_block(float *c, const float *a, const float *b, int row1, int column1, int row2, int column2) {
-    int apos = 0;
-    int bpos;
-    int cpos = 0;
-    for (int i = 0; i < row1; ++i) {
-        bpos = 0;
-        for (int j = 0; j < column1; j++) {
-            register float common = a[apos];
-            for (int k = 0; k < column2; k ++) {
-                c[cpos++] += common * b[bpos++];
-                c[cpos++] += common * b[bpos++];
-                c[cpos++] += common * b[bpos++];
-                c[cpos++] += common * b[bpos++];
-            }
-            apos++;
-            cpos -= column2;
-        }
-        cpos += column2;
     }
 }
